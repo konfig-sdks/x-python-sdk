@@ -57,7 +57,7 @@ RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
         'id': typing.Union[IdSchema, str, ],
-        'source_tweet_id': typing.Union[TweetId, ],
+        'source_tweet_id': typing.Union[TweetIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -81,7 +81,7 @@ request_path_id = api_client.PathParameter(
 request_path_source_tweet_id = api_client.PathParameter(
     name="source_tweet_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=TweetId,
+    schema=TweetIdSchema,
     required=True,
 )
 _auth = [

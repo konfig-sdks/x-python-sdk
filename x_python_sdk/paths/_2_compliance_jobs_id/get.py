@@ -164,7 +164,7 @@ IdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'id': typing.Union[JobId, ],
+        'id': typing.Union[JobIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -182,7 +182,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_id = api_client.PathParameter(
     name="id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=JobId,
+    schema=JobIdSchema,
     required=True,
 )
 _auth = [

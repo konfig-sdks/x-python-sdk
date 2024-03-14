@@ -55,7 +55,7 @@ RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
         'source_user_id': typing.Union[SourceUserIdSchema, str, ],
-        'target_user_id': typing.Union[UserId, ],
+        'target_user_id': typing.Union[UserIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -79,7 +79,7 @@ request_path_source_user_id = api_client.PathParameter(
 request_path_target_user_id = api_client.PathParameter(
     name="target_user_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=UserId,
+    schema=UserIdSchema,
     required=True,
 )
 SchemaFor200ResponseBodyApplicationJson = MuteUserMutationResponseSchema

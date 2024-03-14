@@ -323,7 +323,7 @@ request_query_max_results = api_client.QueryParameter(
 request_query_pagination_token = api_client.QueryParameter(
     name="pagination_token",
     style=api_client.ParameterStyle.FORM,
-    schema=PaginationToken32,
+    schema=PaginationToken32Schema,
     explode=True,
 )
 request_query_user_fields = api_client.QueryParameter(

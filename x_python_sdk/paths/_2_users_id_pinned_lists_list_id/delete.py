@@ -57,7 +57,7 @@ RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
         'id': typing.Union[IdSchema, str, ],
-        'list_id': typing.Union[ListId, ],
+        'list_id': typing.Union[ListIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -81,7 +81,7 @@ request_path_id = api_client.PathParameter(
 request_path_list_id = api_client.PathParameter(
     name="list_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=ListId,
+    schema=ListIdSchema,
     required=True,
 )
 _auth = [

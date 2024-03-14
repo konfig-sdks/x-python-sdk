@@ -59,7 +59,7 @@ ParticipantIdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'participant_id': typing.Union[UserId, ],
+        'participant_id': typing.Union[UserIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -77,7 +77,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_participant_id = api_client.PathParameter(
     name="participant_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=UserId,
+    schema=UserIdSchema,
     required=True,
 )
 # body param

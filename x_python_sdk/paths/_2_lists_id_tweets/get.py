@@ -670,7 +670,7 @@ request_query_max_results = api_client.QueryParameter(
 request_query_pagination_token = api_client.QueryParameter(
     name="pagination_token",
     style=api_client.ParameterStyle.FORM,
-    schema=PaginationToken36,
+    schema=PaginationToken36Schema,
     explode=True,
 )
 request_query_tweet_fields = api_client.QueryParameter(
@@ -708,7 +708,7 @@ IdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'id': typing.Union[ListId, ],
+        'id': typing.Union[ListIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -726,7 +726,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_id = api_client.PathParameter(
     name="id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=ListId,
+    schema=ListIdSchema,
     required=True,
 )
 _auth = [

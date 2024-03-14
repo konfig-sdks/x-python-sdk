@@ -325,7 +325,7 @@ IdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'id': typing.Union[UserId, ],
+        'id': typing.Union[UserIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -343,7 +343,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_id = api_client.PathParameter(
     name="id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=UserId,
+    schema=UserIdSchema,
     required=True,
 )
 SchemaFor200ResponseBodyApplicationJson = Get2UsersIdResponseSchema

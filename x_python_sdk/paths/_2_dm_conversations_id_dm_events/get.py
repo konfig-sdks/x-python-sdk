@@ -640,7 +640,7 @@ request_query_max_results = api_client.QueryParameter(
 request_query_pagination_token = api_client.QueryParameter(
     name="pagination_token",
     style=api_client.ParameterStyle.FORM,
-    schema=PaginationToken32,
+    schema=PaginationToken32Schema,
     explode=True,
 )
 request_query_event_types = api_client.QueryParameter(
@@ -678,7 +678,7 @@ IdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'id': typing.Union[DmConversationId, ],
+        'id': typing.Union[DmConversationIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -696,7 +696,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_id = api_client.PathParameter(
     name="id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=DmConversationId,
+    schema=DmConversationIdSchema,
     required=True,
 )
 _auth = [

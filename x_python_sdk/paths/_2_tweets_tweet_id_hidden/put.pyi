@@ -56,7 +56,7 @@ TweetIdSchema = schemas.Schema
 RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
-        'tweet_id': typing.Union[TweetId, ],
+        'tweet_id': typing.Union[TweetIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -74,7 +74,7 @@ class RequestPathParams(RequestRequiredPathParams, RequestOptionalPathParams):
 request_path_tweet_id = api_client.PathParameter(
     name="tweet_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=TweetId,
+    schema=TweetIdSchema,
     required=True,
 )
 # body param

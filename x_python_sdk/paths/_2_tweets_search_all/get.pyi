@@ -594,13 +594,13 @@ request_query_end_time = api_client.QueryParameter(
 request_query_since_id = api_client.QueryParameter(
     name="since_id",
     style=api_client.ParameterStyle.FORM,
-    schema=TweetId,
+    schema=TweetIdSchema,
     explode=True,
 )
 request_query_until_id = api_client.QueryParameter(
     name="until_id",
     style=api_client.ParameterStyle.FORM,
-    schema=TweetId,
+    schema=TweetIdSchema,
     explode=True,
 )
 request_query_max_results = api_client.QueryParameter(
@@ -612,13 +612,13 @@ request_query_max_results = api_client.QueryParameter(
 request_query_next_token = api_client.QueryParameter(
     name="next_token",
     style=api_client.ParameterStyle.FORM,
-    schema=PaginationToken36,
+    schema=PaginationToken36Schema,
     explode=True,
 )
 request_query_pagination_token = api_client.QueryParameter(
     name="pagination_token",
     style=api_client.ParameterStyle.FORM,
-    schema=PaginationToken36,
+    schema=PaginationToken36Schema,
     explode=True,
 )
 request_query_sort_order = api_client.QueryParameter(

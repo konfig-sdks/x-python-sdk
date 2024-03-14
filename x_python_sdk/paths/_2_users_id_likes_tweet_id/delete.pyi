@@ -55,7 +55,7 @@ RequestRequiredPathParams = typing_extensions.TypedDict(
     'RequestRequiredPathParams',
     {
         'id': typing.Union[IdSchema, str, ],
-        'tweet_id': typing.Union[TweetId, ],
+        'tweet_id': typing.Union[TweetIdSchema, ],
     }
 )
 RequestOptionalPathParams = typing_extensions.TypedDict(
@@ -79,7 +79,7 @@ request_path_id = api_client.PathParameter(
 request_path_tweet_id = api_client.PathParameter(
     name="tweet_id",
     style=api_client.ParameterStyle.SIMPLE,
-    schema=TweetId,
+    schema=TweetIdSchema,
     required=True,
 )
 SchemaFor200ResponseBodyApplicationJson = UsersLikesDeleteResponseSchema
